@@ -2,10 +2,6 @@ import axios from 'axios';
 
 export function fetchData () {
   return function (dispatch) {
-    // axios.get('https://jsdemo.envdev.io/sse')
-    //   .then((response) => {
-    //     console.log(response);
-
     fetch("https://jsdemo.envdev.io/sse").then((response) => {
       const reader = response.body.getReader();
 
@@ -18,7 +14,6 @@ export function fetchData () {
               decodedString = "{" + decodedString + "}";
               decodedString = decodedString.replace(/'/g,"\"").replace("data", "\"data\"");
               decodedString = JSON.parse(decodedString);
-              console.log(decodedString.data);
 
               if (done) {
                 controller.close();
@@ -27,7 +22,6 @@ export function fetchData () {
               
               dispatch({type: 'FETCH_DATA', payload: decodedString.data})
 
-              // Get the data and send it to the browser via the controller
               controller.enqueue(value);
               push();
             });

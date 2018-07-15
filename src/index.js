@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { HashRouter } from 'react-router-dom';
 import store from './store';
 import Main from './components/Main';
-import './stylesheets/style.scss'
+import './stylesheets/style.css'
 
 render(
   <Provider store={store}>

@@ -1,0 +1,23 @@
+body {
+  font-size: 14px;
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 10px 0 0 0;
+}
+.data-row {
+  padding: 20px;
+}
+.data-row .title {
+  font-size: 1.1rem;
+}
+.data-row:nth-child(2n) {
+  background: #f5f5f5;
+}
+.clear {
+  clear: both;
+}
