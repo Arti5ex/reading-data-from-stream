@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 export function fetchData () {
   return function (dispatch) {
@@ -9,10 +8,11 @@ export function fetchData () {
         start(controller) {
           function push() {
             reader.read().then(({ done, value }) => {
-              var encodedString = String.fromCharCode.apply(null, value),
-              decodedString = decodeURIComponent(escape(encodedString));
+              var encodedString = String.fromCharCode.apply(null, value);
+              console.log(decodeURIComponent(encodedString));
+              var decodedString = decodeURIComponent(encodedString);
               decodedString = "{" + decodedString + "}";
-              decodedString = decodedString.replace(/'/g,"\"").replace("data", "\"data\"");
+              decodedString = decodedString.replace("data", "\"data\"");
               decodedString = JSON.parse(decodedString);
 
               if (done) {

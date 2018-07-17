@@ -10,7 +10,7 @@ export default function reducer (state = {
         action.payload.forEach((item) => {
           let requiredIndex = state.data.map(p => p._id).indexOf(item._id);
 
-          if ( requiredIndex != -1 ) {
+          if ( requiredIndex !== -1 ) {
             newArray[requiredIndex] = item;
           } else {
             newArray.push(item);
